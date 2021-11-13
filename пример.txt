@@ -1,0 +1,4 @@
+hello world 
+бебрабебрабебрабебрабебрабебра
+
+print("Hello World")
