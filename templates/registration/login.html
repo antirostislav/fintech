@@ -1,3 +1,5 @@
+
+<div style="text-align:center">
 {% extends "base_generic.html" %}
 
 {% block content %}
@@ -17,8 +19,10 @@
 
 <form method="post" action="{% url 'login' %}">
 {% csrf_token %}
-<table>
 
+<center>
+<table>
+<tbody>
 <tr>
   <td>{{ form.username.label_tag }}</td>
   <td>{{ form.username }}</td>
@@ -28,7 +32,9 @@
   <td>{{ form.password.label_tag }}</td>
   <td>{{ form.password }}</td>
 </tr>
+</tbody>
 </table>
+</center>
 
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />
@@ -38,3 +44,4 @@
 <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
 
 {% endblock %}
+</div>
