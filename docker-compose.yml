@@ -1,0 +1,41 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python ./manage.py runserver 0.0.0.0:8000
+    container_name: web
+    restart: unless-stopped
+    environment:
+      PYTHONBUFFERED: 1
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    networks:
+      - fintech-network
+
+  database:
+    image: mysql:8
+    container_name: database
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=passwordformysqlroot
+      - MYSQL_DATABASE=fintech
+      - MYSQL_USER=django_user
+      - MYSQL_PASSWORD=passwordfordjangouser
+    ports:
+      - "6033:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - fintech-network
+
+networks:
+  fintech-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
