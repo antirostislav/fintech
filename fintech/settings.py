@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     'authentication',
     'finance',
-    'recommendations',
 ]
 
 MIDDLEWARE = [
