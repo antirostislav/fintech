@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     'authentication',
     'finance',
-    'recommendations',
 ]
 
 MIDDLEWARE = [
@@ -81,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fintech',
-        'USER': 'djangouser',
-        'PASSWORD': 'PasswordForDjangoUser288',
-        'HOST': 'localhost',
+        'USER': 'django_user',
+        'PASSWORD': 'passwordfordjangouser',
+        'HOST': 'database',
         'PORT': '3306',
     }
 }
