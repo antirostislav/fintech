@@ -1,0 +1,100 @@
+html {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    display: inline-flex;
+}
+
+.registration {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background: url(../img/fon_baza.svg) no-repeat;
+    background-size: cover;
+    background-position: 70% 70%;
+}
+
+h1 {
+    font-family: 'Proxima Nova';
+    font-size: 50px;
+    color: #4c50ff;
+    position: relative;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h2 {
+    font-family: 'Proxima Nova';
+    font-size: 20px;
+    color: red;
+    position: relative
+}
+
+.top_panel {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: fit-content
+}
+
+button {
+    font-family: Monserrat;
+}
+
+footer {
+    height: 0%;
+}
+
+.btn-registration {
+    width: auto;
+    height: auto;
+    position: relative;
+    margin-top: 100px;
+    border: none;
+    text-align: center;
+    font-size: 25px;
+    background-color: #b7cbbe;
+}
+
+.btn-login {
+    width: auto;
+    height: auto;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: none;
+    text-align: center;
+    color: balck;
+    background-color: #4c50ff;
+    font-size: 20px;
+}
+
+.main-text {
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-width: 300px;
+    /* box-sizing: 80%; */
+    display: flex;
+    justify-content: space-between;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../font/proximanova_regular.ttf');
+}
