@@ -21,29 +21,29 @@
         </nav>
     </header>
     <main>
-        <div class="authorization-box center-div">
+        <form method="post" class="authorization-box center-div">
             <h2>Регистрация</h2>
             <div class="authorization-box-item-container">
                 <div class="item">
-                    <input type="text" name="login-input" id="userLogin" placeholder="Логин">
+                    <input type="text" name="userLogin" placeholder="Логин">
                 </div>
                 <div class="item">
-                    <input type="email" name="email-input" id="userEmail" placeholder="Электронная почта">
+                    <input type="email" name="userEmail" placeholder="Электронная почта">
                 </div>
                 <div class="item">
-                    <input type="password" name="password-input" id="userPassword" placeholder="Введите пароль">
+                    <input type="password" name="userPassword" placeholder="Введите пароль">
                 </div>
                 <div class="item">
-                    <input type="password" name="repeat-password-input" id="userPassword_repeat" placeholder="Повторите пароль">
+                    <input type="password" name="userPasswordRepeat" placeholder="Повторите пароль">
                 </div>
                 <div class="item login-btn">
-                    <a href="#"><button class="btn btn-blue">Зарегистрироваться</button></a>
+                    <button type="submit" class="btn btn-blue">Зарегистрироваться</button>
                 </div>
                 <div class="item swap-reg-link-box">
                     <a href="authorization_log-in.html">Вход</a>
                 </div>
             </div>
-        </div>
+        </form>
         <script type="text/javascript" src="../../static/frontend_lib/framework/js/script.js"></script>
     </main>
 </body>

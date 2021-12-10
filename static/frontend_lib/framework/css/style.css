@@ -10,11 +10,12 @@ body {
 }
 
 header {
-    background-color: #fff;
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border: none;
+    width: auto;
 }
 
 main {
