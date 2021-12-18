@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+:root {
+    --color-green-gray: #3E6B5F;
+}
+
+
 /* Основные контейнеры */
 body {
     background: #fff;
     margin: 0;
     border: none;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -154,6 +158,7 @@ aside nav ul li a:hover {
     transition: 0.3s;
 }
 
+/* Синяя кнопка */
 .btn-blue {
     background-color: #0d6efd;
     color: white;
@@ -166,6 +171,18 @@ aside nav ul li a:hover {
 .btn-blue:focus {
     box-shadow: 0 0 0 4px #98c1fe;
 }
+
+/* Зелено-серая кнопка */
+.btn-green-gray {
+    background-color: var(--color-green-gray);
+    color: white;
+}
+
+.btn-green-gray:hover {
+    opacity: 60%;
+}
+
+.btn-green-gray:focus {}
 
 /* Поля ввода */
 input {
