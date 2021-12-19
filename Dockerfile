@@ -12,3 +12,5 @@ COPY ./finance/ ./finance/
 COPY ./fintech/ ./fintech/
 COPY ./recommendations/ ./recommendations/
 COPY ./manage.py ./manage.py
+COPY ./templates ./templates
+COPY ./static ./static

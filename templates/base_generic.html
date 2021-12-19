@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    {% block title %}<title>Fintech</title>{% endblock %}
+    <title>{% block title %}Fintech{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+{% block header %}{% endblock %}
 {% block sidebar %}{% endblock %}
 {% block content %}{% endblock %}
+{% block footer %}{% endblock %}
 </body>
 </html>

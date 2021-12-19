@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+    {{ form.form_name }}
+{%  endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="field_wrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+            </div>
+        {% endfor %}
+
+        <input type="submit" value={{ form.button_text }}>
+    </form>
+
+{% endblock %}
