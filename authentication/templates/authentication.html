@@ -1,22 +1,43 @@
-{% extends "base_generic.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-    {{ form.form_name }}
-{%  endblock %}
+    <title>{{ form.form_name }}</title>
+{% endblock %}
+
+{% block icon %}
+    <link rel="shortcut icon" type="image/png" href={% static "/media/images/moners_2.png" %}>
+
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href={% static "/css/stylesheet.css" %}>
+
+{% endblock %}
 
 {% block content %}
-
-    <form method="post">
-        {% csrf_token %}
-
-        {% for field in form %}
-            <div class="field_wrapper">
-                {{ field.errors }}
-                {{ field.label_tag }} {{ field }}
+    <main>
+        <form method="post" class="authorization-box center-div">
+            <h2>{{ form.form_name }}</h2>
+            {% csrf_token %}
+            <div class="authorization-box-item-container">
+                {% for field in form %}
+                    <div class="item">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
 
-        <input type="submit" value={{ form.button_text }}>
-    </form>
+            <div class="item login-btn">
+                <button type="submit" class="btn btn-blue">{{ form.button_text }}</button>
+            </div>
 
+            <div class="item swap-reg-link-box">
+                <a href="/">На главную</a>
+            </div>
+        </form>
+    </main>
+
+    <script type="text/javascript" src={% static "frameworks/base/js/script.js" %}></script>
 {% endblock %}

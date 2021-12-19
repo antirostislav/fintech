@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+:root {
+    --color-green-gray: #3E6B5F;
+}
+
+
+/* Основные контейнеры */
+body {
+    background: #fff;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: none;
+    width: auto;
+}
+
+main {
+    display: flex;
+}
+
+footer {}
+
+/* Содержимое основных контейнеров */
+
+/* header */
+header h1 {
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    align-self: center;
+}
+
+header nav {
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+}
+
+header nav ul li {
+    float: left;
+    height: max-content;
+    width: max-content;
+    margin: auto 1em;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: gray;
+}
+
+header nav ul li a:active {
+    color: #cccccc;
+}
+
+/* body */
+
+/* Боковая панель навигации */
+aside {
+    display: flex;
+    justify-content: center
+}
+
+aside nav {
+    align-self: center;
+}
+
+aside nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+aside nav ul li {
+    margin: 0 0 12px 0;
+    padding: 0;
+}
+
+aside nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+aside nav ul li a:hover {
+    color: rgb(0, 0, 0, 0.5);
+}
+
+/* Форма авторизации */
+.authorization-box {
+    width: 500px;
+    height: 800px;
+    border: 2px solid #0e0e0e;
+    border-radius: 10px;
+    margin: 0;
+    background-color: white;
+    transition: 0.5s;
+}
+
+.authorization-box h2 {
+    text-align: center;
+    margin: 0;
+    padding: 15px;
+    border: 1px none black;
+    border-bottom-style: solid;
+}
+
+.authorization-box-item-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    height: 80%;
+    margin: 5%;
+    padding: 0;
+}
+
+.authorization-box-item-container .item {
+    margin: 0 0 21px 0;
+    padding: 0;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: blue;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Синяя кнопка */
+.btn-blue {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #025ce2;
+}
+
+.btn-blue:focus {
+    box-shadow: 0 0 0 4px #98c1fe;
+}
+
+/* Зелено-серая кнопка */
+.btn-green-gray {
+    background-color: var(--color-green-gray);
+    color: white;
+}
+
+.btn-green-gray:hover {
+    opacity: 60%;
+}
+
+.btn-green-gray:focus {}
+
+/* Поля ввода */
+input {
+    padding: 0.5em;
+    width: auto;
+    border: 2px solid #4d4d4d;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* footer */
+
+
+
+/* Вспомогательные стили */
+.center-div {
+    margin: auto;
+    vertical-align: middle;
+}
