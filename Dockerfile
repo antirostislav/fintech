@@ -9,6 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./authentication/ ./authentication/
 COPY ./finance/ ./finance/
+COPY ./landing/ ./landing/
 COPY ./fintech/ ./fintech/
 COPY ./recommendations/ ./recommendations/
 COPY ./manage.py ./manage.py
