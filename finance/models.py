@@ -1,31 +1,24 @@
 from django.db import models
 
 
-class Expense:
+class Transaction(models.Model):
     """
     Класс расхода
     """
-    uid: models.IntegerField()
-    title: models.TextField()
-    datetime: models.DateTimeField()
-    value: models.IntegerField()
+    title = models.TextField()
+    datetime = models.DateTimeField()
+    value = models.IntegerField()
 
 
-class Income:
-    """
-    Класс дохода
-    """
-    uid: models.IntegerField()
-    title: models.TextField()
-    datetime: models.DateTimeField()
-    value: models.IntegerField()
-
-
-class Goal:
+class Target(models.Model):
     """
     Класс цели
     """
-    uid: models.IntegerField()
-    title: models.TextField()
-    datetime: models.DateTimeField()
-    value: models.IntegerField()
+    title = models.TextField(max_length=63)
+    description = models.TextField(max_length=1023)
+    datetime = models.DateTimeField()
+    value = models.PositiveIntegerField()
+
+    class Meta:
+        verbose_name = 'Транзакция'
+        verbose_name_plural = 'Транзакции'
