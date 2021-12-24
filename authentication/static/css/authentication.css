@@ -1,0 +1,66 @@
+body {
+    background-size: cover;
+    background: url(../media/images/authencation_background.svg) no-repeat 70% 70%;
+}
+
+main {
+    height: 900px;
+}
+
+header {
+    border-color: #56667d;
+    border-radius: 0 0 15px 15px;
+    background-color: #fff;
+    height: 69px;
+    padding: 0 10%;
+}
+
+header h1 a {
+    font-family: 'Proxima Nova', serif;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.authorization-box input {
+    font-size: 21px;
+    margin: 30px 0 0;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+
+.authorization-box:hover {
+    box-shadow: 0 0 0 4px #7a90b0;
+}
+
+.authorization-box input:focus {
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    outline: none;
+}
+
+.login-btn {
+    margin: 40px 0 0 0;
+}
+
+.login-btn button {
+    font-size: 20px;
+}
+
+.swap-reg-link-box {
+    font-size: 15px;
+    color: gray;
+}
+
+.swap-reg-link-box a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proximanova_regular.ttf');
+}
