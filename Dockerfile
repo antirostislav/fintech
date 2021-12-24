@@ -14,3 +14,7 @@ COPY ./static ./static
 
 COPY ./authentication/ ./authentication/
 COPY ./finance/ ./finance/
+
+COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
