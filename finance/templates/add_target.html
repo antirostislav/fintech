@@ -6,8 +6,7 @@
 {% endblock %}
 
 {% block links %}
-    <link rel="stylesheet" type="text/css" href={% static "/css/add.css" %}>
-
+    <link rel="stylesheet" type="text/css" href={% static "/css/add_target.css" %}>
 {% endblock %}
 
 {% block content %}
@@ -17,7 +16,7 @@
             {% csrf_token %}
             <div>
                 {% for field in form %}
-                    <div class="item">
+                    <div class="forms">
                         {{ field.errors }}
                         {{ field.label_tag }} {{ field }}
                     </div>
@@ -25,7 +24,7 @@
             </div>
 
             <div class="item">
-                <button type="submit" class="btn btn-blue">{{ form.button_text }}</button>
+                <button type="submit" class="add-button">{{ form.button_text }}</button>
             </div>
         </form>
     </main>

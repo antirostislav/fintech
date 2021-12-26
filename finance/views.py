@@ -14,7 +14,7 @@ def add_target_page(request):
                 return HttpResponseRedirect('/home')
     else:
         form = AddTarget()
-    return render(request, 'add.html', {'form': form})
+    return render(request, 'add_target.html', {'form': form})
 
 
 def get_targets_page(request):

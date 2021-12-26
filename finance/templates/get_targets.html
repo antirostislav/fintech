@@ -1,27 +1,36 @@
-{% extends "base.html" %}
+{% extends "base_get_targets.html" %}
 {% load static %}
 
 {% block title %}
     <title>Просмотр транзакций</title>
 {% endblock %}
-
+<script src="http://jquery-elastic.googlecode.com/svn/trunk/jquery.elastic.source.js"></script>
 {% block links %}
+    <script src="/"></script>
     <link rel="stylesheet" type="text/css" href={% static "/css/get_targets.css" %}>
-
 {% endblock %}
 
 {% block content %}
     <main>
-        <h2>Транзакции</h2>
         <div class="center-div">
+            <h2>Цели</h2>
             {% for item in targets %}
                 <div class="item">
-                    <p>Название: {{ item.title }}</p>
-                    <p>Описание: {{ item.description }}</p>
-                    <p>Ожидаемое время: {{ item.datetime }}</p>
-                    <p>Сумма: {{ item.value }}</p>
-                    <hr>
+                    <div class="line">
+                        <p class="value-name">Название</p>  <p class="value">{{ item.title }}</p> 
+                    </div>
+                    <div class="line"> 
+                        <p class="value-name">Описание </p><textarea disabled rows="10" class="text">{{ item.description }}</textarea>
+                    </div>
+                    <div class="line">
+                        <p class="value-name">Ожидаемое время </p> <p class="value">{{ item.datetime }}</p>
+                    </div>
+                    <div class="line">
+                        <p class="value-name">Сумма </p> <p class="value">{{ item.value }}</p>
+                    </div>
+                    
                 </div>
+                <hr>
             {% endfor %}
         </div>
     </main>
