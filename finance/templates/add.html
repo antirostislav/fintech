@@ -19,7 +19,10 @@
                 {% for field in form %}
                     <div class="item">
                         {{ field.errors }}
-                        {{ field.label_tag }} {{ field }}
+                        {{ field }}
+                        {% if field.label_tag != "" %}
+                            {{ field.label_tag }}
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

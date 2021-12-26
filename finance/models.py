@@ -1,5 +1,7 @@
 from django.db import models
 
+from authentication.models import User
+
 
 class Transaction(models.Model):
     """
@@ -14,11 +16,13 @@ class Target(models.Model):
     """
     Класс цели
     """
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     title = models.TextField(max_length=63)
     description = models.TextField(max_length=1023)
-    datetime = models.DateTimeField()
+    date = models.DateField()
+    time = models.TimeField(null=True)
     value = models.PositiveIntegerField()
 
     class Meta:
-        verbose_name = 'Транзакция'
-        verbose_name_plural = 'Транзакции'
+        verbose_name = 'Цель'
+        verbose_name_plural = 'Цели'
