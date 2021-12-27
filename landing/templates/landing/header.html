@@ -2,12 +2,24 @@
     <h1><span style="color: #33A586;">Fin</span>Project</h1>
     <nav>
         <ul>
-            <li><a href="/authentication/register">
-                <button class="registration-button">Зарегистрироваться</button>
-            </a></li>
-            <li><a href="/authentication/login">
-                <button class="login-button">Войти</button>
-            </a></li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="/authentication/logout">
+                        <button class="registration-button">Выйти</button>
+                    </a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="/authentication/register">
+                        <button class="registration-button">Зарегистрироваться</button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/authentication/login">
+                        <button class="login-button">Войти</button>
+                    </a>
+                </li>
+            {% endif %}
         </ul>
     </nav>
 </header>

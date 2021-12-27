@@ -15,7 +15,7 @@ def login_page(request):
                         get_params = request.GET.copy()
                         return HttpResponseRedirect(get_params.pop('next')[0] + '?' + get_params.urlencode())
                     else:
-                        return HttpResponseRedirect('/home?' + request.GET.urlencode())
+                        return HttpResponseRedirect('/finance/home?' + request.GET.urlencode())
     else:
         form = LoginForm()
     return render(request, 'authentication/authentication.html', {'form': form})
