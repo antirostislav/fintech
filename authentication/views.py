@@ -1,6 +1,6 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from django.shortcuts import render
-from .backends import login, register
+from .backends import login, register, logout
 from .forms import RegisterForm, LoginForm
 
 
@@ -15,7 +15,7 @@ def login_page(request):
                         get_params = request.GET.copy()
                         return HttpResponseRedirect(get_params.pop('next')[0] + '?' + get_params.urlencode())
                     else:
-                        return HttpResponseRedirect('/home?' + request.GET.urlencode())
+                        return HttpResponseRedirect('/finance/home?' + request.GET.urlencode())
     else:
         form = LoginForm()
     return render(request, 'authentication/authentication.html', {'form': form})
@@ -31,3 +31,11 @@ def register_page(request):
     else:
         form = RegisterForm()
     return render(request, 'authentication/authentication.html', {'form': form})
+
+
+def logout_page(request):
+    if request.method == 'POST':
+        return HttpResponseBadRequest()
+    else:
+        logout(request)
+        return HttpResponseRedirect('/')

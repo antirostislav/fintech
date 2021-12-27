@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import password_validation, authenticate
 from django.contrib.auth import login as login_user
+from django.contrib.auth import logout as logout_user
 from django.core.exceptions import ValidationError
 
 from .models import User
@@ -28,3 +29,7 @@ def login(request, form: forms.Form) -> forms.Form:
     else:
         form.add_error('username', 'Имя и/или пароль неверны')
     return form
+
+
+def logout(request):
+    logout_user(request)
