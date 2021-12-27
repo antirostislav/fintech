@@ -15,17 +15,16 @@ def add_transaction(form: forms.Form) -> forms.Form:
     return form
 
 
-def get_targets() -> list[Target]:
-    return list(Target.objects.all())
+def get_targets(owner) -> list[Target]:
+    return list(Target.objects.filter(owner=owner))
 
 
-def add_target(form: forms.Form) -> forms.Form:
-    data = form.clean()
+def add_target(owner, **kwargs) -> None:
+    kwargs.setdefault('has_time', False)
+    kwargs.setdefault('owner', owner)
 
-    if not form.errors:
-        data['value'] = int(data['value'] * 100)
-        data.setdefault('has_time', False)
-        if not data.pop('has_time'):
-            data['time'] = None
-        Target.objects.create(**data)
-    return form
+    kwargs['value'] = int(kwargs['value'] * 100)
+
+    if not kwargs.pop('has_time'):
+        kwargs['time'] = None
+    Target.objects.create(**kwargs)

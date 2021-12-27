@@ -1,6 +1,7 @@
 from django.db import models
 
 from authentication.models import User
+from fintech import settings
 
 
 class Transaction(models.Model):
@@ -16,7 +17,7 @@ class Target(models.Model):
     """
     Класс цели
     """
-    # owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     title = models.TextField(max_length=63)
     description = models.TextField(max_length=1023)
     date = models.DateField()
