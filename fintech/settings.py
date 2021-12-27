@@ -130,3 +130,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authentication.User'
+LOGIN_URL = '/authentication/login/'
+REGISTER_URL = '/authentication/register/'
