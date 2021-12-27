@@ -1,0 +1,49 @@
+{% extends "finance/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Просмотр транзакций</title>
+{% endblock %}
+<script src="http://jquery-elastic.googlecode.com/svn/trunk/jquery.elastic.source.js"></script>
+{% block links %}
+    <script src="/"></script>
+    <link rel="stylesheet" type="text/css" href={% static "/css/get_targets.css" %}>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="center-div">
+            <h2>Цели</h2>
+            {% for item in targets %}
+                <div class="item">
+                    <div class="line">
+                        <p class="value-name">Название</p>
+                        <p class="value">{{ item.title }}</p>
+                    </div>
+                    <div class="line">
+                        <p class="value-name">Описание </p>
+                        <label>
+                            <textarea disabled rows="10" class="text">{{ item.description }}</textarea>
+                        </label>
+                    </div>
+                    <div class="line">
+                        <p class="value-name">Ожидаемая дата</p>
+                        <p class="value">{{ item.date }}</p>
+                    </div>
+                    {% if item.time is not None %}
+                        <div class="line">
+                            <p class="value-name">Ожидаемое время</p>
+                            <p class="value">{{ item.time }}</p>
+                        </div>
+                    {% endif %}
+                    <div class="line">
+                        <p class="value-name">Сумма </p>
+                        <p class="value">{{ item.value }}</p>
+                    </div>
+
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

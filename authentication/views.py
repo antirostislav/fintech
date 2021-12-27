@@ -39,4 +39,3 @@ def logout_page(request):
     else:
         logout(request)
         return HttpResponseRedirect('/')
-

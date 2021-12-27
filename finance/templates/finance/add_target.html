@@ -1,0 +1,40 @@
+{% extends "authentication/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>{{ form.form_name }}</title>
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href={% static "/css/add_target.css" %}>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <form method="post" class="center-div">
+            <h2>{{ form.form_name }}</h2>
+            {% csrf_token %}
+            <div>
+                {% for field in form %}
+                    <div class="forms">
+                        {{ field.errors }}
+                        {{ field }}
+                        {% if field.label_tag != "" %}
+                            {{ field.label_tag }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="item">
+                <button type="submit" class="add-button">{{ form.button_text }}</button>
+            </div>
+        </form>
+
+        <nav>
+            <a href="/finance/target/add">
+                <button class="add-button">Добавить</button>
+            </a>
+        </nav>
+    </main>
+{% endblock %}

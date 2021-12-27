@@ -6,4 +6,4 @@ def landing(request):
     if request.method == "POST":
         return HttpResponseBadRequest(405)
     else:
-        return render(request, 'landing.html')
+        return render(request, 'landing/landing.html')
