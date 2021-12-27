@@ -16,7 +16,7 @@ class Target(models.Model):
     """
     Класс цели
     """
-    owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    # owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     title = models.TextField(max_length=63)
     description = models.TextField(max_length=1023)
     date = models.DateField()

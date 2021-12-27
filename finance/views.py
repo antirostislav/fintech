@@ -16,7 +16,7 @@ def add_target_page(request):
                 return HttpResponseRedirect('/home?' + request.GET.urlencode())
     else:
         form = AddTarget()
-    return render(request, 'add.html', {'form': form})
+    return render(request, 'finance/add_target.html', {'form': form})
 
 
 @login_required
@@ -25,4 +25,4 @@ def get_targets_page(request):
         return HttpResponseBadRequest()
     else:
         targets = get_targets()
-    return render(request, 'get_targets.html', {'targets': targets})
+    return render(request, 'finance/get_targets.html', {'targets': targets})

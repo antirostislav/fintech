@@ -24,5 +24,8 @@ def add_target(form: forms.Form) -> forms.Form:
 
     if not form.errors:
         data['value'] = int(data['value'] * 100)
+        data.setdefault('has_time', False)
+        if not data.pop('has_time'):
+            data['time'] = None
         Target.objects.create(**data)
     return form

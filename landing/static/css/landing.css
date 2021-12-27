@@ -1,15 +1,3 @@
-body {
-    font-family: Montserrat, serif;
-    background: url("../../../static/media/images/background.png") no-repeat;
-}
-
-header {
-    background: rgba(15, 51, 42, 0.6);
-    height: 80px;
-    padding: 0 2%;
-    margin: 0;
-}
-
 header h1 {
     color: #fff;
     font-family: Montserrat, serif;
@@ -28,12 +16,13 @@ header nav ul li .btn {
 }
 
 main {
+    display: flex;
     padding: 0 19% 0 13%;
     justify-content: space-between;
 }
 
 main div h2 {
-    color: #33A586;
+    color: var(--color-text-green);
     font-family: Montserrat, serif;
     font-style: normal;
     font-weight: normal;
@@ -53,16 +42,16 @@ main div p {
     margin: 46px 0 0 0;
 }
 
-main div .btn {
+.btn {
     vertical-align: middle;
+    font-size: 40px;
     width: 355px;
     height: 104px;
     margin: 105px 0 0 0;
-    background-color: #0D5F48;
-    color: #fff;
-    font-family: Montserrat, serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 187.5%;
+    background-color: var(--color-dark-green);
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--color-hover-green);
 }

@@ -12,15 +12,17 @@ class AddTarget(forms.Form):
         max_length=63,
         min_length=4,
         widget=forms.TextInput(attrs={
-            'autofocus': True,
             'placeholder': 'Название',
+            'autofocus': True,
         }),
     )
     description = forms.CharField(
         label='',
         max_length=1023,
+        required=False,
         widget=forms.Textarea(attrs={
             'placeholder': 'Описание',
+            'rows': 10,
         }),
     )
     date = forms.DateField(
@@ -32,6 +34,7 @@ class AddTarget(forms.Form):
     )
     has_time = forms.BooleanField(
         label='Добавить время',
+        required=False,
         widget=forms.CheckboxInput(),
     )
     time = forms.TimeField(
