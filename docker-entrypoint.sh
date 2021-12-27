@@ -3,7 +3,7 @@
 echo "Flush the manage.py command it any"
 
 while ! python manage.py flush --no-input 2>&1; do
-  sleep 10
+  sleep 5
 done
 
 echo "Migrate the Database at startup of project"
