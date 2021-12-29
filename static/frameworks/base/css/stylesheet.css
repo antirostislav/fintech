@@ -51,9 +51,7 @@ header {
     background-color: var(--color-green-common);
 }
 
-main {
-
-}
+main {}
 
 footer {
     background-color: var(--color-green-dark);
@@ -65,7 +63,6 @@ footer {
 h2 {
     font-weight: 500;
     font-size: 40px;
-    text-align: center;
 }
 
 a {
@@ -126,7 +123,7 @@ input:focus {
 }
 
 .btn {
-    border: none;
+    height: max-content;
 
     color: var(--color-white-common);
     font-family: 'Montserrat', sans-serif;
@@ -192,7 +189,7 @@ header nav ul li {
 /* card */
 
 .card-header {
-
+    text-align: center;
 }
 
 .card-main {
