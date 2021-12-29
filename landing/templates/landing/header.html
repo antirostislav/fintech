@@ -1,23 +1,19 @@
 <header>
-    <h1><span style="color: #33A586;">Fin</span>Project</h1>
+    <h1>
+        <a href="/"><span style="color:var(--color-green-light)">Fin</span>Project</a>
+    </h1>
     <nav>
         <ul>
             {% if user.is_authenticated %}
                 <li>
-                    <a href="/authentication/logout">
-                        <button class="registration-button">Выйти</button>
-                    </a>
+                    <a href="/authentication/logout" class="btn">Выйти</a>
                 </li>
             {% else %}
                 <li>
-                    <a href="/authentication/register">
-                        <button class="registration-button">Зарегистрироваться</button>
-                    </a>
+                    <a href="/authentication/register" class="btn">Зарегистрироваться</a>
                 </li>
                 <li>
-                    <a href="/authentication/login">
-                        <button class="login-button">Войти</button>
-                    </a>
+                    <a href="/authentication/login" class="btn">Войти</a>
                 </li>
             {% endif %}
         </ul>
