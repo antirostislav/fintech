@@ -12,38 +12,36 @@
 
 {% block content %}
     <main>
-        <div class="center-div">
-            <h2>Цели</h2>
+        <div class="card center">
+            <h2 class="card-header">Цели</h2>
             {% for item in targets %}
-                <div class="item">
-                    <div class="line">
-                        <p class="value-name">Название</p>
-                        <p class="value">{{ item.title }}</p>
+                <div class="card subcard">
+                    <div class="card-item subcard-item">
+                        <h3 class="card-header">{{ item.title }}</h3>
                     </div>
-                    <div class="line">
-                        <p class="value-name">Описание </p>
+                    <div class="card-item subcard-item">
                         <label>
-                            <textarea disabled rows="10" class="text">{{ item.description }}</textarea>
+                            <textarea disabled rows="10" class="value">{{ item.description }}</textarea>
                         </label>
                     </div>
-                    <div class="line">
-                        <p class="value-name">Ожидаемая дата</p>
+                    <div class="card-item subcard-item">
                         <p class="value">{{ item.date }}</p>
                     </div>
                     {% if item.time is not None %}
-                        <div class="line">
-                            <p class="value-name">Ожидаемое время</p>
+                        <div class="card-item subcard-item">
                             <p class="value">{{ item.time }}</p>
                         </div>
                     {% endif %}
-                    <div class="line">
-                        <p class="value-name">Сумма </p>
+                    <div class="card-item subcard-item">
                         <p class="value">{{ item.value }}</p>
                     </div>
 
                 </div>
-                <hr>
             {% endfor %}
+        </div>
+
+        <div class="hover">
+            <a class="btn" href="/finance/target/add">+</a>
         </div>
     </main>
 {% endblock %}

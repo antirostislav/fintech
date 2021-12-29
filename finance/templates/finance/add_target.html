@@ -1,4 +1,4 @@
-{% extends "authentication/base.html" %}
+{% extends "finance/base.html" %}
 {% load static %}
 
 {% block title %}
@@ -11,12 +11,16 @@
 
 {% block content %}
     <main>
-        <form method="post" class="center-div">
-            <h2>{{ form.form_name }}</h2>
+        <form method="post" class="card center">
             {% csrf_token %}
-            <div>
+
+            <div class="card-header">
+                <h2>{{ form.form_name }}</h2>
+            </div>
+
+            <div class="card-main">
                 {% for field in form %}
-                    <div class="forms">
+                    <div class="card-item">
                         {{ field.errors }}
                         {{ field }}
                         {% if field.label_tag != "" %}
@@ -26,15 +30,9 @@
                 {% endfor %}
             </div>
 
-            <div class="item">
-                <button type="submit" class="add-button">{{ form.button_text }}</button>
+            <div class="card-footer">
+                <button type="submit" class="btn">{{ form.button_text }}</button>
             </div>
         </form>
-
-        <nav>
-            <a href="/finance/target/add">
-                <button class="add-button">Добавить</button>
-            </a>
-        </nav>
     </main>
 {% endblock %}

@@ -35,7 +35,9 @@ class AddTarget(forms.Form):
     has_time = forms.BooleanField(
         label='Добавить время',
         required=False,
-        widget=forms.CheckboxInput(),
+        widget=forms.CheckboxInput(attrs={
+            'class': 'input-checkbox',
+        }),
     )
     time = forms.TimeField(
         label='',
@@ -46,7 +48,7 @@ class AddTarget(forms.Form):
     value = forms.FloatField(
         label='₽',
         min_value=0,
-        initial=1000.00,
+        initial="1000.00",
     )
 
     def __init__(self, *args, **kwargs):
