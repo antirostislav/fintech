@@ -1,68 +1,27 @@
-body {
-    font-family: Montserrat, serif;
-    background: url("../../../static/media/images/background.png") no-repeat;
-}
 
-header {
-    background: rgba(15, 51, 42, 0.6);
-    height: 80px;
-    padding: 0 2%;
-    margin: 0;
-}
+/*main {*/
+/*    display: flex;*/
+/*    padding: 0 19% 0 13%;*/
+/*    justify-content: space-between;*/
+/*}*/
 
-header h1 {
-    color: #fff;
-    font-family: Montserrat, serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 187.5%;
-}
+/*main div h2 {*/
+/*    color: var(--color-text-green);*/
+/*    font-family: Montserrat, serif;*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    font-size: 48px;*/
+/*    line-height: 59px;*/
+/*    padding: 164px 0 0 0;*/
+/*    margin: 0;*/
+/*}*/
 
-header nav ul li .btn {
-    font-size: 20px;
-    height: 45px;
-    font-family: Montserrat, serif;
-    font-style: normal;
-    font-weight: normal;
-}
-
-main {
-    padding: 0 19% 0 13%;
-    justify-content: space-between;
-}
-
-main div h2 {
-    color: #33A586;
-    font-family: Montserrat, serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 48px;
-    line-height: 59px;
-    padding: 164px 0 0 0;
-    margin: 0;
-}
-
-main div p {
-    color: #fff;
-    font-family: Montserrat, serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 187.5%;
-    margin: 46px 0 0 0;
-}
-
-main div .btn {
-    vertical-align: middle;
-    width: 355px;
-    height: 104px;
-    margin: 105px 0 0 0;
-    background-color: #0D5F48;
-    color: #fff;
-    font-family: Montserrat, serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 187.5%;
-}
+/*main div p {*/
+/*    color: #fff;*/
+/*    font-family: Montserrat, serif;*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    font-size: 25px;*/
+/*    line-height: 187.5%;*/
+/*    margin: 46px 0 0 0;*/
+/*}*/

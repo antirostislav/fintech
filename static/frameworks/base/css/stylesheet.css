@@ -1,202 +1,265 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+
+/* Цвета */
 
 :root {
-    --color-green-gray: #3E6B5F;
+    --color-green-dark: #00402D;
+    --color-green-dim: #006747;
+    --color-green-common: #00805A;
+    --color-green-light: #00CC8F;
+    --color-white-common: #FFFFFF;
+    --color-gray-light: #333333;
+    --color-gray-common: #1F1F1F;
+    --color-black-light: #101010;
+    --color-black-common: #0F0F0F;
+    --color-black-transparent: #0F0F0FD0;
+
+    --color-background-image: #121212;
+
+    --color-transparent: #00000000;
 }
 
-
 /* Основные контейнеры */
+
 body {
-    background: #fff;
     margin: 0;
     border: none;
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--color-white-common);
+
+    background: var(--color-background-image) url(../../../media/images/background.png) no-repeat;
+
+    padding: 72px 0 0 0;
 }
 
 header {
-    background-color: transparent;
+    width: 100%;
+    height: 72px;
+    top: 0;
+    position: fixed;
+    box-sizing: border-box;
+
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    border: none;
-    width: auto;
+    padding: 0 20px;
+
+    background-color: var(--color-green-common);
 }
 
 main {
-    display: flex;
+
 }
 
-footer {}
+footer {
+    background-color: var(--color-green-dark);
+}
 
-/* Содержимое основных контейнеров */
+
+/* Элементы */
+
+h2 {
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+}
+
+a {
+    color: var(--color-white-common);
+    text-decoration: none;
+}
+
+textarea,
+input {
+    border: 1px solid var(--color-gray-light);
+    outline: none;
+    border-radius: 2px;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-white-common);
+
+    background-color: var(--color-gray-common);
+
+
+}
+
+input {
+    height: 30px;
+
+    padding: 0 5px;
+}
+
+textarea {
+    resize: none;
+    overflow: hidden;
+
+    padding: 5px 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea:focus,
+input:focus {
+    border: none;
+    box-shadow: 0 0 5px var(--color-green-light);
+}
+
+
+/* Классы */
+
+.hover {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    border: none;
+
+    color: var(--color-white-common);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 450;
+
+    cursor: pointer;
+    background-color: var(--color-green-dim);
+    border-radius: 4px;
+    padding: 15px 20px;
+}
+
+.btn:hover {
+    transition: 0.3s;
+    background-color: var(--color-green-dark);
+    box-shadow: 0 0 5px var(--color-black-common);
+}
+
+.card {
+    border-radius: 4px;
+    border: 2px solid var(--color-gray-light);
+
+    background-color: var(--color-black-transparent);
+    padding: 30px 30px;
+}
 
 /* header */
+
 header h1 {
-    margin: 0;
-    padding: 0;
+    display: inline;
     height: fit-content;
+    width: fit-content;
+
+    font-size: 40px;
+    padding: 0;
+
     align-self: center;
 }
 
 header nav {
-    height: fit-content;
-    width: fit-content;
+
+    display: inline-block;
     align-self: center;
 }
 
 header nav ul {
+    height: max-content;
+    width: max-content;
+
     list-style: none;
     padding: 0;
     margin: 0;
-    width: fit-content;
 }
 
 header nav ul li {
     float: left;
     height: max-content;
     width: max-content;
-    margin: auto 1em;
+    margin: 0 5px;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: black;
-    transition: 0.3s;
+
+/* card */
+
+.card-header {
+
 }
 
-header nav ul li a:hover {
-    color: gray;
-}
+.card-main {
+    padding: 20px 5px;
 
-header nav ul li a:active {
-    color: #cccccc;
-}
-
-/* body */
-
-/* Боковая панель навигации */
-aside {
-    display: flex;
-    justify-content: center
-}
-
-aside nav {
-    align-self: center;
-}
-
-aside nav ul {
-    padding: 0;
-    list-style: none;
-    margin: 0;
-}
-
-aside nav ul li {
-    margin: 0 0 12px 0;
-    padding: 0;
-}
-
-aside nav ul li a {
-    text-decoration: none;
-    color: black;
-    transition: 0.3s;
-}
-
-aside nav ul li a:hover {
-    color: rgb(0, 0, 0, 0.5);
-}
-
-/* Форма авторизации */
-.authorization-box {
-    width: 500px;
-    height: 800px;
-    border: 2px solid #0e0e0e;
-    border-radius: 10px;
-    margin: 0;
-    background-color: white;
-    transition: 0.5s;
-}
-
-.authorization-box h2 {
-    text-align: center;
-    margin: 0;
-    padding: 15px;
-    border: 1px none black;
-    border-bottom-style: solid;
-}
-
-.authorization-box-item-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 90%;
-    height: 80%;
-    margin: 5%;
-    padding: 0;
-}
-
-.authorization-box-item-container .item {
-    margin: 0 0 21px 0;
-    padding: 0;
-}
-
-/* Кнопки */
-.btn {
-    display: inline-block;
-    background-color: transparent;
-    color: blue;
-    font-weight: 400;
-    line-height: 1.5em;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    vertical-align: middle;
-    padding: 6px 12px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-/* Синяя кнопка */
-.btn-blue {
-    background-color: #0d6efd;
-    color: white;
-}
-
-.btn-blue:hover {
-    background-color: #025ce2;
-}
-
-.btn-blue:focus {
-    box-shadow: 0 0 0 4px #98c1fe;
-}
-
-/* Зелено-серая кнопка */
-.btn-green-gray {
-    background-color: var(--color-green-gray);
-    color: white;
-}
-
-.btn-green-gray:hover {
-    opacity: 60%;
-}
-
-.btn-green-gray:focus {}
-
-/* Поля ввода */
-input {
-    padding: 0.5em;
-    width: auto;
-    border: 2px solid #4d4d4d;
-    border-radius: 5px;
     box-sizing: border-box;
 }
 
-/* footer */
-
-
-
-/* Вспомогательные стили */
-.center-div {
+.card-footer {
+    width: fit-content;
     margin: auto;
+}
+
+.card-main input {
+    width: 100%;
+}
+
+.subcard {
+    margin-top: 20px;
+
+    background-color: var(--color-black-common);
+}
+
+.subcard:hover {
+    transition: 0.6s;
+    border-color: var(--color-black-common);
+    box-shadow: 0 0 10px var(--color-green-light);
+}
+
+
+/* subcard */
+
+.subcard textarea {
+    border: none;
+    background-color: var(--color-black-common);
+}
+
+
+/* .card-item */
+
+.card-item {
+    padding-bottom: 20px;
+
     vertical-align: middle;
+
+    display: flex;
+}
+
+.card-item .input-checkbox {
+    height: 10px;
+    width: 10px;
+}
+
+.card-item label {
+    height: fit-content;
+    margin: auto 5px;
+
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* Расположение */
+
+.center {
+    margin: 20px auto 0 auto;
+    height: fit-content;
+    min-width: fit-content;
+    width: 40%;
 }

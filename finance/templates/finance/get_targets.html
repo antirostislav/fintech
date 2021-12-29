@@ -1,0 +1,47 @@
+{% extends "finance/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Просмотр транзакций</title>
+{% endblock %}
+<script src="http://jquery-elastic.googlecode.com/svn/trunk/jquery.elastic.source.js"></script>
+{% block links %}
+    <script src="/"></script>
+    <link rel="stylesheet" type="text/css" href={% static "/css/get_targets.css" %}>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="card center">
+            <h2 class="card-header">Цели</h2>
+            {% for item in targets %}
+                <div class="card subcard">
+                    <div class="card-item subcard-item">
+                        <h3 class="card-header">{{ item.title }}</h3>
+                    </div>
+                    <div class="card-item subcard-item">
+                        <label>
+                            <textarea disabled rows="10" class="value">{{ item.description }}</textarea>
+                        </label>
+                    </div>
+                    <div class="card-item subcard-item">
+                        <p class="value">{{ item.date }}</p>
+                    </div>
+                    {% if item.time is not None %}
+                        <div class="card-item subcard-item">
+                            <p class="value">{{ item.time }}</p>
+                        </div>
+                    {% endif %}
+                    <div class="card-item subcard-item">
+                        <p class="value">{{ item.value }}</p>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="hover">
+            <a class="btn" href="/finance/target/add">+</a>
+        </div>
+    </main>
+{% endblock %}
