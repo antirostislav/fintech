@@ -113,6 +113,10 @@ input:focus {
     box-shadow: 0 0 5px var(--color-green-light);
 }
 
+ul {
+    list-style: none;
+}
+
 
 /* Классы */
 
@@ -153,6 +157,11 @@ input:focus {
     padding: 30px 30px;
 }
 
+.scroll {
+
+}
+
+
 /* header */
 
 header h1 {
@@ -167,7 +176,6 @@ header h1 {
 }
 
 header nav {
-
     display: inline-block;
     align-self: center;
 }
@@ -176,7 +184,6 @@ header nav ul {
     height: max-content;
     width: max-content;
 
-    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -192,7 +199,7 @@ header nav ul li {
 /* card */
 
 .card-header {
-
+    margin: 0;
 }
 
 .card-main {
@@ -222,16 +229,27 @@ header nav ul li {
     box-shadow: 0 0 10px var(--color-green-light);
 }
 
+.scroll {
+    list-style-type: none;
+    overflow-y: scroll;
+}
 
-/* subcard */
+.ul-item {
+    vertical-align: middle;
+    font-size: 14px;
 
-.subcard textarea {
-    border: none;
-    background-color: var(--color-black-common);
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
 }
 
 
 /* .card-item */
+
+.out .card-item textarea {
+    border: none;
+    background-color: var(--color-black-common);
+}
 
 .card-item {
     padding-bottom: 20px;
@@ -252,6 +270,11 @@ header nav ul li {
 
     font-weight: 500;
     text-align: center;
+}
+
+.card-item p {
+    margin: 0;
+    width: fit-content;
 }
 
 

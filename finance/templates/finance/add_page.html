@@ -11,8 +11,10 @@
 
 {% block content %}
     <main>
-        <form method="post" class="card center">
+        <form method="post" class="card center in">
             {% csrf_token %}
+
+            <input type="hidden" name="metadata" value={{ form.data }}>
 
             <div class="card-header">
                 <h2>{{ form.form_name }}</h2>
