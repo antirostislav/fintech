@@ -13,22 +13,24 @@
 {% block content %}
     <main>
         <div class="card center out">
-            <h2 class="card-header">Транзакция «{{ transaction_storage.title }}»"</h2>
+            <div class="card-item">
+                <h2>Транзакция «{{ transaction_storage.title }}»</h2>
+            </div>
             <div class="card-item">
                 <label>
                     <textarea disabled rows="10" class="value">{{ transaction_storage.description }}</textarea>
                 </label>
             </div>
             <div class="card-item">
-                <p class="value">{{ transaction_storage.date }}</p>
+                <p>{{ transaction_storage.date }}</p>
             </div>
             {% if transaction_storage.time is not None %}
                 <div class="card-item">
-                    <p class="value">{{ transaction_storage.time }}</p>
+                    <p>{{ transaction_storage.time }}</p>
                 </div>
             {% endif %}
             <div class="card-item">
-                <p class="value">
+                <p>
                     {% if transaction_storage.frequency is not None %}
                         {{ transaction_storage.frequency }}
                     {% else %}
@@ -37,10 +39,10 @@
                 </p>
             </div>
             <div class="card-item">
-                <p class="value">{{ transaction_storage.value }}</p>
+                <p>{{ transaction_storage.value }}</p>
             </div>
             <div class="card-item">
-                <p class="value">
+                <p>
                     {% if transaction_storage.is_confirmed %}
                         Всегда подтверждено
                     {% else %}
@@ -49,16 +51,22 @@
                 </p>
             </div>
 
-            <div class="">
+            <div>
                 <h3 class="">Ближайшие исполнения</h3>
 
 
                 <form method="post" class="card center in">
                     {% csrf_token %}
-                    <h4 class="" form-header>{{ date_range_form.form_name }}</h4>
-                    <div class="">{{ date_range_form.start_date }}
-                        {{ date_range_form.end_date }}</div>
-                    <div class="card-footer">
+                    <div class="card-item">
+                        <h4>{{ date_range_form.form_name }}</h4>
+                    </div>
+                    <div class="card-item">
+                        {{ date_range_form.start_date }}
+                    </div>
+                    <div class="card-item">
+                        {{ date_range_form.end_date }}
+                    </div>
+                    <div class="card-item">
                         <button type="submit" class="btn">{{ date_range_form.button_text }}</button>
                     </div>
                 </form>
@@ -67,16 +75,24 @@
                 <div class="card scroll">
                     <ul>
                         {% for item in transactions %}
-                            <li class="card subcard ul-item">
-                                <p>{{ item.execution_date }}
-                                    {{ item.value }}
+                            <li class="card-item card">
+                                <div class="card-item">
+                                    <p>
+                                        {{ item.execution_date }}</p></div>
+                                <div class="card-item">
+                                    {{ item.value }}</div>
+                                <div class="card-item">
                                     {% if item.is_confirmed %}
-                                        Да</p>
+                                        Подтверждена
                                     {% else %}
-                                        Не</p>
+                                        Не подтверждена
                                     {% endif %}
-                                <a class="btn edit-btn"
-                                   href="/finance/transaction/add?trstid={{ item.storage.id }}&trstornu={{ item.storage_order_number }}">Изм</a>
+                                    </p>
+                                </div>
+                                <div class="card-item">
+                                    <a class="btn edit-btn"
+                                       href="/finance/transaction/add?trstid={{ item.storage.id }}&trstornu={{ item.storage_order_number }}">Изм</a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>

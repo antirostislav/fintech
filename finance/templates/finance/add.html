@@ -6,21 +6,20 @@
 {% endblock %}
 
 {% block links %}
-    <link rel="stylesheet" type="text/css" href={% static "/css/add_target.css" %}>
+    <link rel="stylesheet" type="text/css" href={% static "/css/add.css" %}>
 {% endblock %}
 
 {% block content %}
     <main>
-        <form method="post" class="card center in">
+        <form method="post" class="card center">
             {% csrf_token %}
 
             <input type="hidden" name="metadata" value={{ form.data }}>
 
-            <div class="card-header">
+            <div class="card-item center">
                 <h2>{{ form.form_name }}</h2>
             </div>
 
-            <div class="card-main">
                 {% for field in form %}
                     <div class="card-item">
                         {{ field.errors }}
@@ -30,10 +29,9 @@
                         {% endif %}
                     </div>
                 {% endfor %}
-            </div>
 
-            <div class="card-footer">
-                <button type="submit" class="btn">{{ form.button_text }}</button>
+            <div class="card-item">
+                <button type="submit" class="btn center">{{ form.button_text }}</button>
             </div>
         </form>
     </main>

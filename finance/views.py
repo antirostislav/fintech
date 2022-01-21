@@ -28,7 +28,7 @@ def add_transaction_storage_page(request):
             return HttpResponseRedirect('/finance/transaction-storage/get')
     else:
         form = AddTransactionStorage()
-    return render(request, 'finance/add_page.html', {'form': form})
+    return render(request, 'finance/add.html', {'form': form})
 
 
 @login_required
@@ -74,8 +74,8 @@ def get_transaction_storages_page(request):
         transactions = transaction_storage.get_transactions(**get_parameters)
 
         date_range_form = DateRange({
-            'start_date': request.GET['start_date'],
-            'end_date': request.GET['end_date'],
+            'start_date': get_parameters['start_date'],
+            'end_date': get_parameters['end_date'],
         })
 
         for transaction in transactions:
@@ -123,7 +123,7 @@ def add_transaction_page(request):
             form.data = urlencode(
                 {'storage_id': transaction.storage.id, 'storage_order_number': transaction.storage_order_number,
                  'id': transaction.id if transaction.id else -1})
-        return render(request, 'finance/add_page.html', {'form': form})
+        return render(request, 'finance/add.html', {'form': form})
 
 
 @login_required
@@ -135,7 +135,7 @@ def add_target_page(request):
             return HttpResponseRedirect('/finance/target/get')
     else:
         form = AddTarget()
-    return render(request, 'finance/add_page.html', {'form': form})
+    return render(request, 'finance/add.html', {'form': form})
 
 
 @login_required
