@@ -1,0 +1,106 @@
+{% extends "finance/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Просмотр транзакции «{{ transaction_storage.title }}»</title>
+{% endblock %}
+
+{% block links %}
+    <script src="/"></script>
+    <link rel="stylesheet" type="text/css" href={% static "/css/get_transaction_storage_single.css" %}>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="card center out">
+            <div class="card-item">
+                <h2>Транзакция «{{ transaction_storage.title }}»</h2>
+            </div>
+            <div class="card-item">
+                <label>
+                    <textarea disabled rows="10" class="value">{{ transaction_storage.description }}</textarea>
+                </label>
+            </div>
+            <div class="card-item">
+                <p>{{ transaction_storage.date }}</p>
+            </div>
+            {% if transaction_storage.time is not None %}
+                <div class="card-item">
+                    <p>{{ transaction_storage.time }}</p>
+                </div>
+            {% endif %}
+            <div class="card-item">
+                <p>
+                    {% if transaction_storage.frequency is not None %}
+                        {{ transaction_storage.frequency }}
+                    {% else %}
+                        Единоразовая
+                    {% endif %}
+                </p>
+            </div>
+            <div class="card-item">
+                <p>{{ transaction_storage.value }}</p>
+            </div>
+            <div class="card-item">
+                <p>
+                    {% if transaction_storage.is_confirmed %}
+                        Всегда подтверждено
+                    {% else %}
+                        Требует подтверждения
+                    {% endif %}
+                </p>
+            </div>
+
+            <div>
+                <h3 class="">Ближайшие исполнения</h3>
+
+
+                <form method="post" class="card center in">
+                    {% csrf_token %}
+                    <div class="card-item">
+                        <h4>{{ date_range_form.form_name }}</h4>
+                    </div>
+                    <div class="card-item">
+                        {{ date_range_form.start_date }}
+                    </div>
+                    <div class="card-item">
+                        {{ date_range_form.end_date }}
+                    </div>
+                    <div class="card-item">
+                        <button type="submit" class="btn">{{ date_range_form.button_text }}</button>
+                    </div>
+                </form>
+
+
+                <div class="card scroll">
+                    <ul>
+                        {% for item in transactions %}
+                            <li class="card-item card">
+                                <div class="card-item">
+                                    <p>
+                                        {{ item.execution_date }}</p></div>
+                                <div class="card-item">
+                                    {{ item.value }}</div>
+                                <div class="card-item">
+                                    {% if item.is_confirmed %}
+                                        Подтверждена
+                                    {% else %}
+                                        Не подтверждена
+                                    {% endif %}
+                                    </p>
+                                </div>
+                                <div class="card-item">
+                                    <a class="btn edit-btn"
+                                       href="/finance/transaction/add?trstid={{ item.storage.id }}&trstornu={{ item.storage_order_number }}">Изм</a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {#        <div class="hover">#}
+        {#            <a class="btn" href="/finance/transaction-storage/add?id={{ transaction.id }}">Изменить</a>#}
+        {#        </div>#}
+    </main>
+{% endblock %}

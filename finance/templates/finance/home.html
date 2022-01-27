@@ -1,0 +1,41 @@
+{% extends "finance/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Домашняя страница</title>
+{% endblock %}
+
+{% block links %}
+    <script src="/"></script>
+    <link rel="stylesheet" type="text/css" href={% static "/css/home.css" %}>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="card center">
+            <h2 class="card-header">Быстрые ссылки</h2>
+            <div class="card-item card">
+                <div class="card-item">
+                    <h3 class="card-header">Цели</h3>
+                </div>
+                <div class="card-item">
+                    <a class="btn" href="/finance/target/add">Добавить цель</a>
+                </div>
+                <div class="card-item">
+                    <a class="btn" href="/finance/target/get">Просмотреть цели</a>
+                </div>
+            </div>
+            <div class="card-item card">
+                <div class="card-item">
+                    <h3 class="card-header">Транзакции</h3>
+                </div>
+                <div class="card-item">
+                    <a class="btn" href="/finance/transaction-storage/add">Добавить транзакцию</a>
+                </div>
+                <div class="card-item">
+                    <a class="btn" href="/finance/transaction-storage/get">Просмотреть транзакции</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

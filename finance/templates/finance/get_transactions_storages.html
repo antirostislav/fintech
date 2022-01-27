@@ -1,0 +1,67 @@
+{% extends "finance/base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Просмотр транзакций</title>
+{% endblock %}
+
+{% block links %}
+    <script src="/"></script>
+    <link rel="stylesheet" type="text/css" href={% static "/css/get_transaction_storages.css" %}>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="card center out">
+            <h2 class="card-header">Транзакции</h2>
+            {% if transaction_storages is not None %}
+                {% for item in transaction_storages %}
+                    <a href="/finance/transaction-storage/get?id={{ item.id }}">
+                        <div class="card subcard">
+                            <div class="card-item subcard-item">
+                                <h3 class="card-header">{{ item.title }}</h3>
+                            </div>
+                            <div class="card-item subcard-item">
+                                <p class="value">{{ item.date }}</p>
+                            </div>
+                            {% if item.time is not None %}
+                                <div class="card-item subcard-item">
+                                    <p class="value">{{ item.time }}</p>
+                                </div>
+                            {% endif %}
+                            <div class="card-item subcard-item">
+                                <p class="value">
+                                    {% if item.frequency is not None %}
+                                        {{ item.frequency }}
+                                    {% else %}
+                                        Единоразовая
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="card-item subcard-item">
+                                <p class="value">{{ item.value }}</p>
+                            </div>
+                            <div class="card-item subcard-item">
+                                <p class="value">
+                                    {% if item.is_confirmed %}
+                                        Всегда подтверждено
+                                    {% else %}
+                                        Требует подтверждения
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+                </div>
+            {% else %}
+                <div class="subcard">
+                    <a class="card-item btn" href="/finance/transaction-storage/add">Добавить транзакцию</a>
+                </div>
+            {% endif %}
+
+        <div class="hover">
+            <a class="btn" href="/finance/transaction-storage/add">+</a>
+        </div>
+    </main>
+{% endblock %}
